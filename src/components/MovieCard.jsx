@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const MovieCard = ({ movie }) => {
   return (
-    <Card sx={{ maxWidth: 200, height: '100%', m: 'auto' }}>
+    <Card sx={{ width: '100%', height: '100%' }}>
       <Link to={`/movie/${movie.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
         <CardMedia
           component="img"

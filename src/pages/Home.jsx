@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Grid, Container, Typography, CircularProgress } from '@mui/material';
+import { Grid as MuiGrid, Container, Typography, CircularProgress } from '@mui/material';
 import MovieCard from '../components/MovieCard';
 import tmdb from '../api/tmdb';
 
@@ -31,13 +31,13 @@ const Home = () => {
       {loading ? (
         <CircularProgress />
       ) : (
-        <Grid container spacing={2}>
+        <MuiGrid container spacing={2}>
           {movies.map((movie) => (
-            <Grid item key={movie.id} xs={6} sm={4} md={3}>
+            <MuiGrid item key={movie.id} xs={12} sm={6} md={4} lg={3}>
               <MovieCard movie={movie} />
-            </Grid>
+            </MuiGrid>
           ))}
-        </Grid>
+        </MuiGrid>
       )}
     </Container>
   );
