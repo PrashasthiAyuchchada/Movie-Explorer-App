@@ -1,21 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import MovieDetails from './pages/MovieDetails';
+import Favorites from './pages/Favorites';
+import Navbar from './components/Navbar';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <Container>
-    <Typography variant="h4" gutterBottom>
-      Movie Explorer
-    </Typography>
-    <Button variant="contained" color="primary">
-      Hello MUI
-    </Button>
-  </Container>
-  )
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movie/:id" element={<MovieDetails />} />
+        <Route path="/favorites" element={<Favorites />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
